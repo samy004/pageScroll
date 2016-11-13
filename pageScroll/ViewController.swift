@@ -14,6 +14,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var scrollView: UIScrollView!
     var images = [UIImageView]()
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
             
             scrollView.addSubview(imageView)
             
-            imageView.frame = CGRect(x:newX - 70, y: (view.frame.size.height / 2) - 75, width: 150, height: 150)
+            imageView.frame = CGRect(x:newX - 75, y: (view.frame.size.height / 2) - 75, width: 150, height: 150)
         }
         
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height)
