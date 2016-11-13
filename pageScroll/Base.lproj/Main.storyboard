@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sky" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-YV-4e4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Sky" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-YV-4e4">
                                 <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="HU3-VL-zrt">
                                 <rect key="frame" x="260" y="40" width="86" height="81"/>
@@ -34,15 +33,32 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mountains" translatesAutoresizingMaskIntoConstraints="NO" id="Ai7-F7-fVT">
-                                <rect key="frame" x="0.0" y="496" width="375" height="171"/>
+                                <rect key="frame" x="0.0" y="496" width="314" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="Pe9-4n-jF4"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8e-vh-J8L">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ADE-CA-9lL">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-SV-WY6">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D7l-Ht-tY3">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="GGq-Pn-4Tj"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8e-vh-J8L">
+                                <rect key="frame" x="84" y="0.0" width="200" height="667"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="667" id="hY0-81-lMP"/>
+                                    <constraint firstAttribute="width" constant="200" id="VlW-hn-BYz"/>
+                                    <constraint firstAttribute="height" constant="667" id="bxr-2Y-FjK"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -50,13 +66,15 @@
                         <constraints>
                             <constraint firstItem="HU3-VL-zrt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="0mY-mM-oOG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HU3-VL-zrt" secondAttribute="trailing" constant="13" id="4rw-fj-p29"/>
-                            <constraint firstItem="s8e-vh-J8L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ApW-hK-CfY"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="41" id="FRO-8O-eRn"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="centerX" secondItem="vSe-YV-4e4" secondAttribute="centerX" id="FRi-p3-ljE"/>
                             <constraint firstAttribute="trailing" secondItem="Ai7-F7-fVT" secondAttribute="trailing" id="MNj-qX-k9Q"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="top" secondItem="ADE-CA-9lL" secondAttribute="top" id="Ojr-hO-iPD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ai7-F7-fVT" secondAttribute="bottom" id="Rif-c9-AJL"/>
-                            <constraint firstItem="s8e-vh-J8L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WKe-e8-qGI"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="bottom" secondItem="ADE-CA-9lL" secondAttribute="bottom" id="Ssh-ha-qDL"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bCD-Y1-zxi"/>
                             <constraint firstItem="Ai7-F7-fVT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fSY-A9-3Qp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s8e-vh-J8L" secondAttribute="bottom" id="fVS-PI-ZL0"/>
-                            <constraint firstAttribute="trailing" secondItem="s8e-vh-J8L" secondAttribute="trailing" id="jXf-y2-rra"/>
+                            <constraint firstItem="s8e-vh-J8L" firstAttribute="centerX" secondItem="Ai7-F7-fVT" secondAttribute="centerX" id="m2Q-Kv-ga3"/>
                         </constraints>
                     </view>
                     <connections>
